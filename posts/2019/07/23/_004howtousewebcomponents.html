@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vaadin10 教程之如何使用WEB组件(四) | LancCJ 博客</title>
+    <meta name="description" content="技术分享，知识积累">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.9e86c8b6.css" as="style"><link rel="preload" href="/assets/js/app.62309a0b.js" as="script"><link rel="preload" href="/assets/js/11.172a3989.js" as="script"><link rel="preload" href="/assets/js/17.d34459f9.js" as="script"><link rel="prefetch" href="/assets/js/1.b6bc5722.js"><link rel="prefetch" href="/assets/js/10.bca0b007.js"><link rel="prefetch" href="/assets/js/12.362a48fb.js"><link rel="prefetch" href="/assets/js/13.741c4fba.js"><link rel="prefetch" href="/assets/js/14.ebdb329c.js"><link rel="prefetch" href="/assets/js/15.dad3ebd6.js"><link rel="prefetch" href="/assets/js/16.f4371e8b.js"><link rel="prefetch" href="/assets/js/18.622931bb.js"><link rel="prefetch" href="/assets/js/19.c01579eb.js"><link rel="prefetch" href="/assets/js/20.a2f9095a.js"><link rel="prefetch" href="/assets/js/21.f1abadbd.js"><link rel="prefetch" href="/assets/js/22.23858958.js"><link rel="prefetch" href="/assets/js/23.a98db12f.js"><link rel="prefetch" href="/assets/js/24.c853de97.js"><link rel="prefetch" href="/assets/js/25.220a020e.js"><link rel="prefetch" href="/assets/js/26.daae4acc.js"><link rel="prefetch" href="/assets/js/27.47463de9.js"><link rel="prefetch" href="/assets/js/28.d469bfe8.js"><link rel="prefetch" href="/assets/js/29.45ba61af.js"><link rel="prefetch" href="/assets/js/3.c94b4558.js"><link rel="prefetch" href="/assets/js/30.b880e47a.js"><link rel="prefetch" href="/assets/js/31.59105882.js"><link rel="prefetch" href="/assets/js/32.3e8d38ac.js"><link rel="prefetch" href="/assets/js/4.8eba6167.js"><link rel="prefetch" href="/assets/js/5.726c1142.js"><link rel="prefetch" href="/assets/js/6.cd4ce564.js"><link rel="prefetch" href="/assets/js/7.3fd2a9c4.js"><link rel="prefetch" href="/assets/js/8.d0040d24.js"><link rel="prefetch" href="/assets/js/9.07598586.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9e86c8b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-0539f1bd><div data-v-39c72c19 data-v-0539f1bd><nav class="navbar" data-v-39c72c19><div class="container" data-v-39c72c19><a href="/" class="router-link-active" data-v-39c72c19><span class="navbar-site-name" data-v-39c72c19>
+          LancCJ 博客
+        </span></a> <div class="navbar-toggler" data-v-39c72c19><svg class="icon" style="font-size:1.2em;" data-v-39c72c19 data-v-39c72c19><title data-v-39c72c19 data-v-39c72c19>menu</title><use xlink:href="#icon-menu" data-v-39c72c19 data-v-39c72c19></use></svg></div> <div class="navbar-links" data-v-39c72c19><a href="/" class="navbar-link" data-v-39c72c19>
+            首页
+          </a><a href="/posts/" class="navbar-link" data-v-39c72c19>
+            文章
+          </a><a href="/about" class="navbar-link" data-v-39c72c19>
+            个人简介
+          </a><a href="/website" class="navbar-link" data-v-39c72c19>
+            建站案例
+          </a><a href="/lvduoduo" class="navbar-link" data-v-39c72c19>
+            帮助文档
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-39c72c19></div></div> <div class="banner" data-v-98d6aa8c data-v-0539f1bd data-v-0539f1bd><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-0539f1bd>
+          Vaadin10 教程之如何使用WEB组件(四)
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6cd81e6a data-v-6cd81e6a><main class="main" data-v-6cd81e6a><div class="post" data-v-6cd81e6a data-v-6cd81e6a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-07-23
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-07-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/07/19/_003vaadinquickstarttutorial.html" class="post-link" data-v-4e23451f>
+      上一篇 : Vaadin10 教程之快速入门(三)
+    </a> <a href="/posts/2019/07/25/_005howtouseanapplayout.html" class="post-link" data-v-4e23451f>
+      下一篇 : Vaadin10 教程之如何使用App布局(五)
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h2 id="本文来源"><a href="#本文来源" aria-hidden="true" class="header-anchor">#</a> 本文来源</h2> <p>本文来自<a href="https://vaadin.com/tutorials/using-web-components" target="_blank" rel="noopener noreferrer">官网Vaadin using-web-components<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>本教程将教您如何使用Web组件并与之交互。我们将构建一个小型UI，将人员添加到数据网格中。</p> <p><img src="/assets/img/completed-app-yellow.13dee405.png" alt="completed-app-yellow"></p> <p>大多数Web组件（如Vaadin组件集）都作为ES模块分发。要有效地使用它们，您需要拥有Webpack，Parcel或Rollup等构建工具。如果您已有一个处理ES模块的现有项目，请随时直接跳到步骤1。</p> <h2 id="第0步：构建工具-step-0-build-tooling"><a href="#第0步：构建工具-step-0-build-tooling" aria-hidden="true" class="header-anchor">#</a> <a href="https://youtu.be/KXjA52xat7Y" target="_blank" rel="noopener noreferrer">第0步：构建工具 Step 0: Build tooling<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <h3 id="创建和初始化项目-create-and-init-project"><a href="#创建和初始化项目-create-and-init-project" aria-hidden="true" class="header-anchor">#</a> 创建和初始化项目 Create and init project</h3> <pre><code>首先创建一个新文件夹并在其中初始化NPM。
+
+```java
+$ mkdir webcomponents
+$ cd webcomponents
+$ npm init -y (1)
+```
+
+-y标志默认为所有NPM init问题回答“是”。如果要自定义答案，请忽略它。
+
+然后，安装Webpack和插件：
+
+```java
+$ npm install --save-dev webpack webpack-dev-server webpack-cli html-webpack-plugin
+```
+</code></pre> <h3 id="项目结构-project-structure"><a href="#项目结构-project-structure" aria-hidden="true" class="header-anchor">#</a> 项目结构 Project structure</h3> <pre><code>在您创建的webcomponents目录中，创建另一个文件夹：src。在其中，创建index.html和index.js。暂时将index.js留空。将以下内容添加到index.html：
+
+src/index.html
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Webcomponents!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Yay!
+    &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre> <h3 id="配置-webpack-configure-webpack"><a href="#配置-webpack-configure-webpack" aria-hidden="true" class="header-anchor">#</a> 配置 Webpack Configure Webpack</h3> <pre><code>在项目的根目录中，创建一个webpack配置文件webpack.config.js：
+
+webpack.config.js
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = ({ mode }) =&gt; {
+    return {
+        mode, 
+        plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html' 
+        })
+        ],
+        devtool: mode === 'development' ? 'source-map' : 'none' 
+    };
+};
+```
+
+* 配置mode属性。这将从命令行设置，可以是开发或生产。
+* 告诉HtmlWebpackPlugin使用我们的索引文件而不是生成自己的索引文件。
+* 启用源映射以进行开发
+</code></pre> <h3 id="添加用于运行应用程序的脚本-add-scripts-for-running-the-app"><a href="#添加用于运行应用程序的脚本-add-scripts-for-running-the-app" aria-hidden="true" class="header-anchor">#</a> 添加用于运行应用程序的脚本 Add scripts for running the app</h3> <pre><code>在package.json中定义两个NPM脚本，用于运行和构建应用程序。
+
+```javascript
+&quot;scripts&quot;: {
+    -    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+    +    &quot;dev&quot;: &quot;webpack-dev-server --env.mode development&quot;,
+    +    &quot;prod&quot;: &quot;webpack --env.mode production&quot;
+},
+```
+
+在此之后，您可以使用npm run dev启动开发服务器，或使用npm run prod构建生产优化的构建。
+
+您对源代码所做的任何更改都会在开发期间自动编译并反映在浏览器中。
+</code></pre> <h2 id="第1步：使用web组件-step-1-using-web-components"><a href="#第1步：使用web组件-step-1-using-web-components" aria-hidden="true" class="header-anchor">#</a> <a href="https://youtu.be/88Sa-SlHRxk" target="_blank" rel="noopener noreferrer">第1步：使用Web组件 Step 1: Using Web Components<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <h3 id="安装组件-install-the-components"><a href="#安装组件-install-the-components" aria-hidden="true" class="header-anchor">#</a> 安装组件 Install the components</h3> <pre><code>使用Web组件的第一步是安装它们。在这种情况下，我们从Vaadin组件集中安装vaadin-text-field，vaadin-button和vaadin-grid。除了组件之外，我们还安装了webcomponentsjs，这是一个用于添加对旧版浏览器的支持的polyfill。
+
+```java
+$ npm install --save @vaadin/vaadin-text-field @vaadin/vaadin-button @vaadin/vaadin-grid
+```
+
+安装完成后，导入index.js中的组件以使其可供浏览器使用。
+
+src/index.js
+
+```javascript
+import '@vaadin/vaadin-button';
+import '@vaadin/vaadin-grid';
+import '@vaadin/vaadin-text-field';
+```
+</code></pre> <h3 id="为旧版浏览器添加polyfill-add-polyfills-for-older-browsers"><a href="#为旧版浏览器添加polyfill-add-polyfills-for-older-browsers" aria-hidden="true" class="header-anchor">#</a> 为旧版浏览器添加polyfill Add polyfills for older browsers</h3> <pre><code>尽管大多数现代浏览器都内置了对Web组件的支持，但仍然存在使用旧版浏览器的用户。如果您想让他们的应用程序可用，您希望包含在没有本机支持的情况下在浏览器中模拟功能的polyfill。webcomponents.js polyfill附带一个加载程序脚本，可用于仅加载特定浏览器所需的polyfill。它动态加载polyfill，因此不能直接导入由Webpack构建的JS依赖项，而是需要复制依赖项并将加载器包含在索引文件中。该库还包含一个ES5兼容性脚本，以防您将应用程序转换为ES5。
+
+```java
+$ npm install --save-dev copy-webpack-plugin @webcomponents/webcomponentsjs
+```
+</code></pre> <h3 id="复制polyfills-copy-polyfills"><a href="#复制polyfills-copy-polyfills" aria-hidden="true" class="header-anchor">#</a> 复制polyfills Copy polyfills</h3> <pre><code>我们需要做的第一件事是复制polyfill。如果您使用的是与Webpack不同的构建工具，请参阅该工具的文档，了解如何复制静态资产。
+
+webpack.config.js
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
++const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+module.exports = ({ mode }) =&gt; {
+return {
+    mode,
+    plugins: [
+    new HtmlWebpackPlugin({
+        template: './src/index.html'
+    }),
++      new CopyWebpackPlugin([
++        {
++          context: 'node_modules/@webcomponents/webcomponentsjs',
++          from: '**/*.js',
++          to: 'webcomponents'
++        }
++      ])
++    ],
+    devtool: mode === 'development' ? 'source-map' : 'none'
+};
+};
+```
+</code></pre> <h3 id="加载polyfill"><a href="#加载polyfill" aria-hidden="true" class="header-anchor">#</a> 加载polyfill</h3> <pre><code>然后，在index.html的&lt;head&gt;部分中包含加载程序和ES5兼容性脚本的可选导入。
+
+src/index.html
+
+```html
+&lt;script src=&quot;webcomponents/webcomponents-loader.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+if (!window.customElements) { document.write('&lt;!--'); }
+&lt;/script&gt;
+&lt;script src=&quot;webcomponents/custom-elements-es5-adapter.js&quot;&gt;&lt;/script&gt;
+&lt;!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER --&gt;
+```
+
+您现在可以在IE11 +和任何常绿浏览器中使用Web组件。
+</code></pre> <h3 id="使用web-components构建ui-use-web-components-to-build-the-ui"><a href="#使用web-components构建ui-use-web-components-to-build-the-ui" aria-hidden="true" class="header-anchor">#</a> 使用Web Components构建UI Use Web Components to build the UI</h3> <pre><code>安装组件后，可以像使用任何其他HTML标记一样使用它们。用以下内容替换index.html的正文内容：
+
+src/index.html
+
+```html
+&lt;div class=&quot;form&quot;&gt;
+&lt;vaadin-text-field label=&quot;First Name&quot; id=&quot;firstName&quot;&gt; &lt;/vaadin-text-field&gt;
+&lt;vaadin-text-field label=&quot;Last Name&quot; id=&quot;lastName&quot;&gt; &lt;/vaadin-text-field&gt;
+&lt;vaadin-button id=&quot;addButton&quot;&gt; Add &lt;/vaadin-button&gt;
+&lt;/div&gt;
+&lt;vaadin-grid id=&quot;grid&quot;&gt;
+&lt;vaadin-grid-column path=&quot;firstName&quot; header=&quot;First name&quot;&gt; 
+&lt;/vaadin-grid-column&gt;
+&lt;vaadin-grid-column path=&quot;lastName&quot; header=&quot;Last name&quot;&gt;
+&lt;/vaadin-grid-column&gt;
+&lt;/vaadin-grid&gt;
+```
+
+网格使用对象数组作为其数据源。path属性定义该对象应在列中显示的属性。
+
+请注意，我们为所有组件添加了id属性。Ids让我们更容易在下一步中从JavaScript中获取它们。
+</code></pre> <h3 id="侦听事件并更新属性-listen-for-events-and-update-properties"><a href="#侦听事件并更新属性-listen-for-events-and-update-properties" aria-hidden="true" class="header-anchor">#</a> 侦听事件并更新属性 Listen for events and update properties</h3> <pre><code>现在我们已经准备好了所有的UI构建块，下一步就是添加一些功能。
+
+首先在index.js中添加一个调用函数initUI（）的load事件监听器。
+
+src/index.js
+
+```javascript
+window.addEventListener('load', () =&gt; {
+    initUI();
+});
+```
+
+在initUI函数中正在进行相当数量的操作，所以让我们一步一步地看看正在发生的事情：
+
+src/index.js
+
+```javascript
+function initUI() {
+    const firstNameField = document.querySelector('#firstName');
+    const lastNameField = document.querySelector('#lastName');
+    const addButton = document.querySelector('#addButton');
+    const grid = document.querySelector('#grid'); 
+
+    let people = []; 
+
+    addButton.addEventListener('click', e =&gt; { 
+        people = [ 
+        ...people,
+        {
+            firstName: firstNameField.value,
+            lastName: lastNameField.value
+        }
+        ];
+        grid.items = people; 
+        firstNameField.value = ''; 
+        lastNameField.value = '';
+    });
+}
+```
+
+通过document.querySelector获取对组件的引用
+
+定义一个数组来保存添加的人员。
+
+在按钮上添加单击侦听器以添加人员。
+
+创建一个包含所有先前人员和新创建人员的新阵列。可以从组件的value属性中检索名称值。
+
+将new people数组设置为网格上的items属性以显示更新的数据。
+
+清除输入字段。
+
+运行应用程序，您现在应该可以向网格添加新条目。
+</code></pre> <h2 id="总结和后续步骤-summary-and-next-steps"><a href="#总结和后续步骤-summary-and-next-steps" aria-hidden="true" class="header-anchor">#</a> 总结和后续步骤 Summary and next steps</h2> <pre><code>导入后，Web Components的行为与任何其他HTML元素相同。您可以设置和读取数据的属性和属性，并侦听事件以添加交互性。
+
+Web组件旨在独立于框架。您可以将它们与框架或模板库一起使用，以减少手动查询元素和设置其值的样板。有关详细信息，请参阅我们在常用框架中使用Web组件的任何其他指南。
+</code></pre></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-07-23
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-07-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/07/19/_003vaadinquickstarttutorial.html" class="post-link" data-v-4e23451f>
+      上一篇 : Vaadin10 教程之快速入门(三)
+    </a> <a href="/posts/2019/07/25/_005howtouseanapplayout.html" class="post-link" data-v-4e23451f>
+      下一篇 : Vaadin10 教程之如何使用App布局(五)
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-6cd81e6a><div class="info-card main-div" data-v-3da8ff8d data-v-6cd81e6a><div class="info-card-header" data-v-3da8ff8d><img src="/img/avatar.jpg" alt="LancCJ" class="info-avatar" data-v-3da8ff8d></div> <div class="info-card-body" data-v-3da8ff8d><section class="info-nickname" data-v-3da8ff8d>
+      LancCJ
+    </section> <section class="info-desc" data-v-3da8ff8d>不断摸索<br/>快乐至上</section> <section class="info-contact" data-v-3da8ff8d><section data-v-3da8ff8d><span title="SuZhou City, China" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>SuZhou City, China</title><use xlink:href="#icon-location" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          SuZhou City, China
+        </span></span></section> <section data-v-3da8ff8d><span title="AGS" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>AGS</title><use xlink:href="#icon-organization" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          AGS
+        </span></span></section> <section data-v-3da8ff8d><a href="mailto:lanccj@163.com" title="lanccj@163.com" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>lanccj@163.com</title><use xlink:href="#icon-email" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          lanccj@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-3da8ff8d><section class="info-sns clearfix" data-v-3da8ff8d><a href="https://github.com/lanccj" target="_blank" class="sns-link" data-v-3da8ff8d><span title="GitHub: lanccj" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>GitHub: lanccj</title><use xlink:href="#icon-github" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a><a href="https://hub.docker.com/u/lanccj" target="_blank" class="sns-link" data-v-3da8ff8d><span title="Docker Hub: lanccj" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Docker Hub: lanccj</title><use xlink:href="#icon-docker" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6cd81e6a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#本文来源">本文来源</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#第0步：构建工具-step-0-build-tooling">第0步：构建工具 Step 0: Build tooling</a><ul><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#创建和初始化项目-create-and-init-project">创建和初始化项目 Create and init project</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#项目结构-project-structure">项目结构 Project structure</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#配置-webpack-configure-webpack">配置 Webpack Configure Webpack</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#添加用于运行应用程序的脚本-add-scripts-for-running-the-app">添加用于运行应用程序的脚本 Add scripts for running the app</a></li></ul></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#第1步：使用web组件-step-1-using-web-components">第1步：使用Web组件 Step 1: Using Web Components</a><ul><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#安装组件-install-the-components">安装组件 Install the components</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#为旧版浏览器添加polyfill-add-polyfills-for-older-browsers">为旧版浏览器添加polyfill Add polyfills for older browsers</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#复制polyfills-copy-polyfills">复制polyfills Copy polyfills</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#加载polyfill">加载polyfill</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#使用web-components构建ui-use-web-components-to-build-the-ui">使用Web Components构建UI Use Web Components to build the UI</a></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#侦听事件并更新属性-listen-for-events-and-update-properties">侦听事件并更新属性 Listen for events and update properties</a></li></ul></li><li><a href="/posts/2019/07/23/_004howtousewebcomponents.html#总结和后续步骤-summary-and-next-steps">总结和后续步骤 Summary and next steps</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/posts/2019/07/23/_004howtousewebcomponents.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1114308c><p class="sns-links" data-v-1114308c><a href="https://github.com/lanccj" target="_blank" class="sns-link" data-v-1114308c><span title="GitHub: lanccj" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>GitHub: lanccj</title><use xlink:href="#icon-github" data-v-1114308c data-v-1114308c></use></svg></span></a><a href="https://hub.docker.com/u/lanccj" target="_blank" class="sns-link" data-v-1114308c><span title="Docker Hub: lanccj" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>Docker Hub: lanccj</title><use xlink:href="#icon-docker" data-v-1114308c data-v-1114308c></use></svg></span></a></p> <p data-v-1114308c><span data-v-1114308c>Powered by </span> <a href="https://vuepress.vuejs.org" target="_blank" data-v-1114308c>
+      Vuepress
+    </a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.62309a0b.js" defer></script><script src="/assets/js/11.172a3989.js" defer></script><script src="/assets/js/17.d34459f9.js" defer></script>
+  </body>
+</html>

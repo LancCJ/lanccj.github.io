@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MongoDB(3.6.2)分片副本集详细搭建教程Windows平台附视频(二) | LancCJ 博客</title>
+    <meta name="description" content="技术分享，知识积累">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.9e86c8b6.css" as="style"><link rel="preload" href="/assets/js/app.62309a0b.js" as="script"><link rel="preload" href="/assets/js/11.172a3989.js" as="script"><link rel="preload" href="/assets/js/6.cd4ce564.js" as="script"><link rel="prefetch" href="/assets/js/1.b6bc5722.js"><link rel="prefetch" href="/assets/js/10.bca0b007.js"><link rel="prefetch" href="/assets/js/12.362a48fb.js"><link rel="prefetch" href="/assets/js/13.741c4fba.js"><link rel="prefetch" href="/assets/js/14.ebdb329c.js"><link rel="prefetch" href="/assets/js/15.dad3ebd6.js"><link rel="prefetch" href="/assets/js/16.f4371e8b.js"><link rel="prefetch" href="/assets/js/17.d34459f9.js"><link rel="prefetch" href="/assets/js/18.622931bb.js"><link rel="prefetch" href="/assets/js/19.c01579eb.js"><link rel="prefetch" href="/assets/js/20.a2f9095a.js"><link rel="prefetch" href="/assets/js/21.f1abadbd.js"><link rel="prefetch" href="/assets/js/22.23858958.js"><link rel="prefetch" href="/assets/js/23.a98db12f.js"><link rel="prefetch" href="/assets/js/24.c853de97.js"><link rel="prefetch" href="/assets/js/25.220a020e.js"><link rel="prefetch" href="/assets/js/26.daae4acc.js"><link rel="prefetch" href="/assets/js/27.47463de9.js"><link rel="prefetch" href="/assets/js/28.d469bfe8.js"><link rel="prefetch" href="/assets/js/29.45ba61af.js"><link rel="prefetch" href="/assets/js/3.c94b4558.js"><link rel="prefetch" href="/assets/js/30.b880e47a.js"><link rel="prefetch" href="/assets/js/31.59105882.js"><link rel="prefetch" href="/assets/js/32.3e8d38ac.js"><link rel="prefetch" href="/assets/js/4.8eba6167.js"><link rel="prefetch" href="/assets/js/5.726c1142.js"><link rel="prefetch" href="/assets/js/7.3fd2a9c4.js"><link rel="prefetch" href="/assets/js/8.d0040d24.js"><link rel="prefetch" href="/assets/js/9.07598586.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9e86c8b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-0539f1bd><div data-v-39c72c19 data-v-0539f1bd><nav class="navbar" data-v-39c72c19><div class="container" data-v-39c72c19><a href="/" class="router-link-active" data-v-39c72c19><span class="navbar-site-name" data-v-39c72c19>
+          LancCJ 博客
+        </span></a> <div class="navbar-toggler" data-v-39c72c19><svg class="icon" style="font-size:1.2em;" data-v-39c72c19 data-v-39c72c19><title data-v-39c72c19 data-v-39c72c19>menu</title><use xlink:href="#icon-menu" data-v-39c72c19 data-v-39c72c19></use></svg></div> <div class="navbar-links" data-v-39c72c19><a href="/" class="navbar-link" data-v-39c72c19>
+            首页
+          </a><a href="/posts/" class="navbar-link" data-v-39c72c19>
+            文章
+          </a><a href="/about" class="navbar-link" data-v-39c72c19>
+            个人简介
+          </a><a href="/website" class="navbar-link" data-v-39c72c19>
+            建站案例
+          </a><a href="/lvduoduo" class="navbar-link" data-v-39c72c19>
+            帮助文档
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-39c72c19></div></div> <div class="banner" data-v-98d6aa8c data-v-0539f1bd data-v-0539f1bd><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-0539f1bd>
+          MongoDB(3.6.2)分片副本集详细搭建教程Windows平台附视频(二)
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6cd81e6a data-v-6cd81e6a><main class="main" data-v-6cd81e6a><div class="post" data-v-6cd81e6a data-v-6cd81e6a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-06-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-06-27
+    </span></section> <section class="post-links" data-v-4e23451f><!----> <a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%B8%89.html" class="post-link" data-v-4e23451f>
+      下一篇 : MongoDB(3.6.2)分片副本集详细搭建教程Windows平台附视频(三)
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h2 id="分片1-shard1-服务命令行启动"><a href="#分片1-shard1-服务命令行启动" aria-hidden="true" class="header-anchor">#</a> 分片1(shard1)服务命令行启动</h2> <p>我们依次的在三台机器上面执行启动命令,此处我们执行事先准备的bat</p> <div class="language- extra-class"><pre class="language-text"><code>C:\mongo\soft\bin\mongod.exe --shardsvr --replSet shard1 -f C:\mongo\shard1\configchard1.conf
+</code></pre></div><p><img src="/assets/img/1-1.a5b25b10.png" alt="mongo-shard1-启动"></p> <h2 id="分片2-shard2-服务命令行启动"><a href="#分片2-shard2-服务命令行启动" aria-hidden="true" class="header-anchor">#</a> 分片2(shard2)服务命令行启动</h2> <p>我们依次的在三台机器上面执行启动命令,此处我们执行事先准备的bat</p> <div class="language- extra-class"><pre class="language-text"><code>C:\mongo\soft\bin\mongod.exe --shardsvr --replSet shard2 -f C:\mongo\shard2\configchard2.conf
+</code></pre></div><p><img src="/assets/img/2-2.77ebec6f.png" alt="mongo-shard2-启动"></p> <h2 id="分片3-shard3-服务命令行启动"><a href="#分片3-shard3-服务命令行启动" aria-hidden="true" class="header-anchor">#</a> 分片3(shard3)服务命令行启动</h2> <p>我们依次的在三台机器上面执行启动命令,此处我们执行事先准备的bat</p> <div class="language- extra-class"><pre class="language-text"><code>C:\mongo\soft\bin\mongod.exe --shardsvr --replSet shard3 -f C:\mongo\shard3\configchard3.conf
+</code></pre></div><p><img src="/assets/img/3-2.c9953c2b.png" alt="mongo-shard3-启动"></p> <h2 id="路由-monogs-服务命令行启动"><a href="#路由-monogs-服务命令行启动" aria-hidden="true" class="header-anchor">#</a> 路由(monogs)服务命令行启动</h2> <p>我们依次的在三台机器上面执行启动命令,此处我们执行事先准备的bat</p> <div class="language- extra-class"><pre class="language-text"><code>C:\mongo\soft\bin\mongos.exe -f C:\mongo\mongos\configos.conf
+</code></pre></div><p><img src="/assets/img/4-2.b595045d.png" alt="mongo-mongo-启动"></p> <h2 id="配置-config-副本集配置"><a href="#配置-config-副本集配置" aria-hidden="true" class="header-anchor">#</a> 配置(config)副本集配置</h2> <p>我们随便连接一台服务器的  配置服务节点 在CMD中执行命令</p> <div class="language- extra-class"><pre class="language-text"><code>mongo.exe 10.211.55.19:21000
+</code></pre></div><p>然后我们将配置节点配置到config这个变量中，直接复制如下内容</p> <div class="language- extra-class"><pre class="language-text"><code>config = { _id:&quot;replConf&quot;, members:[
+                     {_id:0,host:&quot;10.211.55.19:21000&quot;},
+                     {_id:1,host:&quot;10.211.55.22:21000&quot;},
+                     {_id:2,host:&quot;10.211.55.23:21000&quot;}
+                ]
+         }
+</code></pre></div><p>然后执行初始化命令</p> <div class="language- extra-class"><pre class="language-text"><code>rs.initiate(config)
+</code></pre></div><h2 id="分别片1-shard1-副本集配置"><a href="#分别片1-shard1-副本集配置" aria-hidden="true" class="header-anchor">#</a> 分别片1(shard1)副本集配置</h2> <p>我们连接到一台非仲裁节点</p> <div class="language- extra-class"><pre class="language-text"><code>mongo.exe 10.211.55.19:22001
+</code></pre></div><p>然后切换到admin数据库，执行命令</p> <div class="language- extra-class"><pre class="language-text"><code>use admin
+</code></pre></div><p>然后设置副本集的config参数值,将内容直接复制进去CMD中</p> <div class="language- extra-class"><pre class="language-text"><code>config = { _id:&quot;shard1&quot;, members:[
+                     {_id:0,host:&quot;10.211.55.19:22001&quot;},
+                     {_id:1,host:&quot;10.211.55.22:22001&quot;},
+                     {_id:2,host:&quot;10.211.55.23:22001&quot;,arbiterOnly:true}
+                ]
+         }
+</code></pre></div><p>然后初始化这段配置，执行命令</p> <div class="language- extra-class"><pre class="language-text"><code>rs.initiate(config);  
+</code></pre></div><h2 id="分别片2-shard2-副本集配置"><a href="#分别片2-shard2-副本集配置" aria-hidden="true" class="header-anchor">#</a> 分别片2(shard2)副本集配置</h2> <p>同分片1一样依次执行命令，确认在非仲裁节点上面，这个很重要</p> <div class="language- extra-class"><pre class="language-text"><code>mongo.exe 10.211.55.19:22002
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>use admin
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>config = { _id:&quot;shard2&quot;, members:[
+                     {_id:0,host:&quot;10.211.55.19:22002&quot;},
+                     {_id:1,host:&quot;10.211.55.22:22002&quot;,arbiterOnly:true},
+                     {_id:2,host:&quot;10.211.55.23:22002&quot;}
+                ]
+         }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>rs.initiate(config); 
+</code></pre></div><h2 id="分别片3-shard3-副本集配置"><a href="#分别片3-shard3-副本集配置" aria-hidden="true" class="header-anchor">#</a> 分别片3(shard3)副本集配置</h2> <p>同分片1一样依次执行命令，确认在非仲裁节点上面，这个很重要</p> <div class="language- extra-class"><pre class="language-text"><code>mongo.exe 10.211.55.19:22003
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>use admin
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>config = { _id:&quot;shard3&quot;, members:[
+                     {_id:0,host:&quot;10.211.55.19:22003&quot;,arbiterOnly:true},
+                     {_id:1,host:&quot;10.211.55.22:22003&quot;},
+                     {_id:2,host:&quot;10.211.55.23:22003&quot;}
+                ]
+         }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>rs.initiate(config);
+</code></pre></div><h2 id="路由-mongos-与分片-shard-串联配置"><a href="#路由-mongos-与分片-shard-串联配置" aria-hidden="true" class="header-anchor">#</a> 路由(mongos)与分片(shard)串联配置</h2> <p>为什么有这一步，主要是让路由节点知道我们存在分片然后等有数据存储的时候将数据存储到分片上面</p> <p>首先我们随便连接到一台路由节点服务上面,执行命令</p> <div class="language- extra-class"><pre class="language-text"><code>mongo.exe 10.211.55.19:20000
+</code></pre></div><p>同样的我们也是需要切换到admin数据库</p> <div class="language- extra-class"><pre class="language-text"><code>use  admin
+</code></pre></div><p>串联路由服务器与分配副本集1</p> <div class="language- extra-class"><pre class="language-text"><code>db.runCommand( { addshard : &quot;shard1/10.211.55.19:22001,10.211.55.22:22001,10.211.55.23:22001&quot;});
+</code></pre></div><p>串联路由服务器与分配副本集2</p> <div class="language- extra-class"><pre class="language-text"><code>db.runCommand( { addshard : &quot;shard2/10.211.55.19:22002,10.211.55.22:22002,10.211.55.23:22002&quot;});
+</code></pre></div><p>串联路由服务器与分配副本集3</p> <div class="language- extra-class"><pre class="language-text"><code>db.runCommand( { addshard : &quot;shard3/10.211.55.19:22003,10.211.55.22:22003,10.211.55.23:22003&quot;});
+</code></pre></div><p>查看分片服务器的配置</p> <div class="language- extra-class"><pre class="language-text"><code>db.runCommand( { listshards : 1 } );
+</code></pre></div><p>至此呢，我们已经完成了3台的部署且分片已经设置完毕，但是我们现在直接去存储我们文件的时候，文件数据是不会去分片存储到我们分片副本集上面，他可能只是在某一个上面存储。所以我们需要下一步，设置启用分片存储，而这个设置是针对数据库中的集合设置的，可以理解为对数据库中哪张表进行分片存储,我在下一篇说明下怎样设置。</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-06-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-06-27
+    </span></section> <section class="post-links" data-v-4e23451f><!----> <a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%B8%89.html" class="post-link" data-v-4e23451f>
+      下一篇 : MongoDB(3.6.2)分片副本集详细搭建教程Windows平台附视频(三)
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-6cd81e6a><div class="info-card main-div" data-v-3da8ff8d data-v-6cd81e6a><div class="info-card-header" data-v-3da8ff8d><img src="/img/avatar.jpg" alt="LancCJ" class="info-avatar" data-v-3da8ff8d></div> <div class="info-card-body" data-v-3da8ff8d><section class="info-nickname" data-v-3da8ff8d>
+      LancCJ
+    </section> <section class="info-desc" data-v-3da8ff8d>不断摸索<br/>快乐至上</section> <section class="info-contact" data-v-3da8ff8d><section data-v-3da8ff8d><span title="SuZhou City, China" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>SuZhou City, China</title><use xlink:href="#icon-location" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          SuZhou City, China
+        </span></span></section> <section data-v-3da8ff8d><span title="AGS" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>AGS</title><use xlink:href="#icon-organization" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          AGS
+        </span></span></section> <section data-v-3da8ff8d><a href="mailto:lanccj@163.com" title="lanccj@163.com" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>lanccj@163.com</title><use xlink:href="#icon-email" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          lanccj@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-3da8ff8d><section class="info-sns clearfix" data-v-3da8ff8d><a href="https://github.com/lanccj" target="_blank" class="sns-link" data-v-3da8ff8d><span title="GitHub: lanccj" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>GitHub: lanccj</title><use xlink:href="#icon-github" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a><a href="https://hub.docker.com/u/lanccj" target="_blank" class="sns-link" data-v-3da8ff8d><span title="Docker Hub: lanccj" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Docker Hub: lanccj</title><use xlink:href="#icon-docker" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6cd81e6a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分片1-shard1-服务命令行启动">分片1(shard1)服务命令行启动</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分片2-shard2-服务命令行启动">分片2(shard2)服务命令行启动</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分片3-shard3-服务命令行启动">分片3(shard3)服务命令行启动</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#路由-monogs-服务命令行启动">路由(monogs)服务命令行启动</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#配置-config-副本集配置">配置(config)副本集配置</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分别片1-shard1-副本集配置">分别片1(shard1)副本集配置</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分别片2-shard2-副本集配置">分别片2(shard2)副本集配置</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#分别片3-shard3-副本集配置">分别片3(shard3)副本集配置</a></li><li><a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#路由-mongos-与分片-shard-串联配置">路由(mongos)与分片(shard)串联配置</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/posts/2019/06/27/mongodb-3-6-2-%E5%88%86%E7%89%87%E5%89%AF%E6%9C%AC%E9%9B%86%E8%AF%A6%E7%BB%86%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8Bwindows%E5%B9%B3%E5%8F%B0%E9%99%84%E8%A7%86%E9%A2%91-%E4%BA%8C.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1114308c><p class="sns-links" data-v-1114308c><a href="https://github.com/lanccj" target="_blank" class="sns-link" data-v-1114308c><span title="GitHub: lanccj" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>GitHub: lanccj</title><use xlink:href="#icon-github" data-v-1114308c data-v-1114308c></use></svg></span></a><a href="https://hub.docker.com/u/lanccj" target="_blank" class="sns-link" data-v-1114308c><span title="Docker Hub: lanccj" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>Docker Hub: lanccj</title><use xlink:href="#icon-docker" data-v-1114308c data-v-1114308c></use></svg></span></a></p> <p data-v-1114308c><span data-v-1114308c>Powered by </span> <a href="https://vuepress.vuejs.org" target="_blank" data-v-1114308c>
+      Vuepress
+    </a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.62309a0b.js" defer></script><script src="/assets/js/11.172a3989.js" defer></script><script src="/assets/js/6.cd4ce564.js" defer></script>
+  </body>
+</html>
