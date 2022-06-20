@@ -153,7 +153,7 @@
 <p>在这个2分钟的教程中，您将学习如何构建一个小型但功能齐全的Vaadin应用程序。<br>这个简单的示例将教您基于组件的开发和监听事件的基础知识。</p>
 <p><a target="_blank" rel="noopener" href="https://youtu.be/6kDCn6OvXkA">youtube视频地址</a></p>
 <p>您将构建的应用程序是经典的Todo应用程序。</p>
-<p><img src="/../../.vuepress/public/img/vaadin10/vaadinApplication.jpg" alt="vaadinApplication"></p>
+<p><img src="/post/7874d79b.htm/../.vuepress/public/img/vaadin10/vaadinApplication.jpg" alt="vaadinApplication"></p>
 <h2 id="先决条件-Prerequisites"><a href="#先决条件-Prerequisites" class="headerlink" title="先决条件 Prerequisites"></a>先决条件 Prerequisites</h2><p>本教程假设您在计算机上进行了以下设置：Java 8或更高版本像IntelliJ，Eclipse或Netbeans这样的IDEMaven的</p>
 <ul>
 <li><p>下载并导入 Download and import the app starter</p>
@@ -168,7 +168,7 @@
 </li>
 <li><p>使用组件和布局构建UI Building UIs with components and layouts</p>
 <p>Vaadin是一个基于组件的框架。您可以通过实例化组件并将它们放入确定如何显示它们的布局来构建用户界面。MainLayout.java扩展了VerticalLayout。这意味着添加的每个组件都放在前一个组件的下方。Vaadin在布局和组件周围添加了填充，以提高视觉清晰度。  </p>
-<p><img src="/../../.vuepress/public/img/vaadin10/vaadinapplication2.jpg" alt="vaadinApplication2"> </p>
+<p><img src="/post/7874d79b.htm/../.vuepress/public/img/vaadin10/vaadinapplication2.jpg" alt="vaadinApplication2"> </p>
 <p>首先，创建应用程序所需的所有组件：</p>
 <p>MainLayout.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Route(&quot;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainView</span> <span class="keyword">extends</span> <span class="title class_">VerticalLayout</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">MainView</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">VerticalLayout</span> <span class="variable">todosList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">VerticalLayout</span>(); <span class="comment">// </span></span><br><span class="line">    <span class="type">TextField</span> <span class="variable">taskField</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TextField</span>(); <span class="comment">// </span></span><br><span class="line">    <span class="type">Button</span> <span class="variable">addButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Button</span>(<span class="string">&quot;Add&quot;</span>); <span class="comment">// </span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -179,7 +179,7 @@
 <li>addButton将触发逻辑以将新项添加到我们的待办事项列表中</li>
 </ul>
 <p>如果您仍在运行服务器，则可以构建项目，Spring Boot DevTools应该接收更改。如果没有，请运行spring-boot：根据“下载并导入app starter”部分中的说明运行Maven目标。导航到localhost：8080，您应该看到以下内容：</p>
-<p><img src="/../../.vuepress/public/img/vaadin10/vaadinapplication3.jpg" alt="vaadinApplication3"></p>
+<p><img src="/post/7874d79b.htm/../.vuepress/public/img/vaadin10/vaadinapplication3.jpg" alt="vaadinApplication3"></p>
 </li>
 <li><p>Listen to button click events to add new todo items</p>
 <p>我们现在已经有了应用程序的主要结构。但该应用程序没有做任何事情。我们需要在按钮上附加一些功能，将其转换为实际的工作应用程序。Vaadin使用事件驱动的编程模型。这意味着您可以侦听组件上的事件以获得您感兴趣的交互通知。在我们的示例中，我们希望在Add-button上侦听click事件并附加用于向列表添加新todo项的逻辑。</p>
@@ -188,7 +188,7 @@
 
 <p>使用taskField中的值作为标签创建一个复选框。</p>
 <p>刷新浏览器，然后尝试将一些项目添加到列表中。</p>
-<p><img src="/../../.vuepress/public/img/vaadin10/completed-app.gif" alt="completed-app">     </p>
+<p><img src="/post/7874d79b.htm/../.vuepress/public/img/vaadin10/completed-app.gif" alt="completed-app">     </p>
 <p>恭喜，您已经完成了第一个Vaadin申请！</p>
 </li>
 </ul>
